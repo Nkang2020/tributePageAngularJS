@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script>
+  var classApp = angular.module("app", []);
+classApp.controller("controller1", function($scope) {
+  $scope.lotr = {
+    heading: "J.R.R.",
+    subheading: "Tolkien",
+    imgURL: "https://s-media-cache-ak0.pinimg.com/originals/bf/f9/51/bff951a6d4e6bea2923f59abfee802bf.jpg",
+    subheading2: "Memorable Quotes",
+    subheading3: "Find out more about J.R.R. Tolkien ",
+    wikiURL: "https://www.tolkiensociety.org/author/biography/"
+  };
+  $scope.quotes = [{
+    quote: "- Not all those who wander are lost."
+  }, {
+    quote: "- All we have to decide is what to do with the time that is given to us."
+  }, {
+    quote: "- Courage is found in unlikely places."
+  }, {
+    quote: "- It's the job that's never started as takes longest to finish."
+  }, {
+    quote: "- Little by little, one travels far."
+  }, ]
+});
+</script>
+</head>
+<body>
+  <div class="text-center" ng-app="app" ng-controller="controller1">
+    <h1>{{lotr.heading}}</h1>
+    <h3>{{lotr.subheading}}</h3>
+    <img ng-src="{{lotr.imgURL}}" />
+    <h3>{{lotr.subheading2}}</h3>
+    <ul ng-repeat="item in quotes">
+      <li>{{item.quote}}</li>
+    </ul>
+    <h5>{{lotr.subheading3}}<a ng-href="{{lotr.wikiURL}}" target="blank">here.</a></h5>
+  </div>
+</body>
+</html>
